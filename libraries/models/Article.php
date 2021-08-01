@@ -4,6 +4,7 @@ require_once('libraries/models/Model.php');
 
 class Article extends Model {
     
+    protected $table = 'articles';
     /**
      * Retourne la liste des articles
      * 
@@ -29,15 +30,15 @@ class Article extends Model {
        return $article;
    }
 
-   /**
-    * Supprime un article grâce à son identifiant
-    * 
-    * @param integer $id
-    * @return void
-    */
-    public function delete(int $id): void 
-    {
-        $query = $this->pdo->prepare('DELETE FROM articles WHERE id = :id');
-        $query->execute(['id' => $id]);
-    }
+//    /**
+//     * Supprime un article grâce à son identifiant
+//     * 
+//     * @param integer $id
+//     * @return void
+//     */
+//     public function delete(int $id): void 
+//     {
+//         $query = $this->pdo->prepare('DELETE FROM articles WHERE id = :id');
+//         $query->execute(['id' => $id]);
+//     }
 }
